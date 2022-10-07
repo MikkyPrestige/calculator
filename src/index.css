@@ -1,13 +1,74 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+* {
+ margin: 0;
+ padding: 0;
+ box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+ font-family: 'Poppins', sans-serif;
+ background: #1e272e;
+}
+
+.App {
+ text-align: center;
+}
+
+.calculator {
+ width: 100%;
+ max-width: 400px;
+ margin: 10rem auto;
+}
+
+.display {
+ background-color: #2C3A47;
+ color: #fff;
+ height: 4rem;
+ font-size: 1.5rem;
+ display: flex;
+ flex-direction: column;
+ padding: .5rem;
+
+}
+
+.display-calc {
+ display: flex;
+ justify-content: flex-end;
+ align-items: center;
+}
+
+.display-result {
+ display: flex;
+ justify-content: flex-start;
+ align-items: center;
+ font-size: .8rem;
+ font-weight: 100;
+}
+
+.operators {
+ display: grid;
+ grid-template-columns: repeat(4, 1fr);
+ grid-gap: 1px;
+ background-color: #4b6584;
+}
+
+.operator {
+ background-color: #182C61;
+ color: #d1d8e0;
+ font-size: 1.2rem;
+ font-weight: 400;
+ padding: .5rem;
+ border: none;
+ cursor: pointer;
+}
+
+.equalTo {
+ grid-column: 3 / span 2;
+}
+
+.operator:hover {
+ background-color: #273c75;
+}
+
+.operator:active {
+ background-color: #1e272e;
 }
