@@ -9,14 +9,15 @@ body {
  background: #1e272e;
 }
 
-.App {
+.app {
  text-align: center;
 }
 
-.calculator {
+.app-container {
  width: 100%;
  max-width: 400px;
  margin: 10rem auto;
+ border: none;
 }
 
 .display {
