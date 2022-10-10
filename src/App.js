@@ -239,6 +239,89 @@ function App() {
     setCalc(Math.round(value).toString());  // ROUND THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
   };
 
+  // CREATE CEILING FUNCTION
+  const ceil = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.ceil(value).toString());  // CEILING OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE FLOOR FUNCTION
+  const floor = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.floor(value).toString());  // FLOOR OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE ABSOLUTE VALUE FUNCTION
+  const abs = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.abs(value).toString());  // ABSOLUTE VALUE OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE EXPONENTIAL FUNCTION
+  const exp = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.exp(value).toString());  // EXPONENTIAL OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE CUBE ROOT FUNCTION
+  const cbrt = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.cbrt(value).toString());  // CUBE ROOT OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE FACTORIAL FUNCTION
+  const factorial = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(factorialize(value).toString());  // FACTORIAL OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE FACTORIAL FUNCTION
+  const factorialize = (num) => {
+    if (num < 0) {
+      return -1;
+    } else if (num === 0) {
+      return 1;
+    } else {
+      return num * factorialize(num - 1);
+    }
+  };
+
   // CREATE DIGITS FUNCTION
   const createDigits = () => {
     const digits = []; // CREATE DIGITS ARRAY
@@ -261,35 +344,41 @@ function App() {
           </div>
         </div>
         <div className='operators'>
-          <button onClick={clear} className='operator'>AC</button>
+          <button onClick={clear} className='operator clear'>AC</button>
+          <button onClick={posNeg} className='operator'>+/-</button>
+          <button onClick={() => bracket('(')} className='operator'>(</button>
+          <button onClick={() => bracket(')')} className='operator'>)</button>
+          <button onClick={square} className='operator'>^</button>
+          <button onClick={del} className='operator delete'>DEL</button>
           <button onClick={() => updateCalc('+')} className='operator'>+</button>
           <button onClick={() => updateCalc('-')} className='operator'>-</button>
-          <button onClick={del} className='operator'>DEL</button>
           <button onClick={percentage} className='operator'>%</button>
           <button onClick={() => updateCalc('*')} className='operator'>*</button>
           <button onClick={() => updateCalc('/')} className='operator'>/</button>
           <button onClick={() => updateCalc('.')} className='operator'>.</button>
           {createDigits().map((digit) => (
-            <button onClick={() => updateCalc(digit.toString())} className='operator' key={digit}>{digit}</button> // CREATE DIGITS BUTTONS AND MAP THROUGH DIGITS ARRAY TO DISPLAY DIGITS 1-9 ON BUTTONS 
+            <button onClick={() => updateCalc(digit.toString())} className='digit' key={digit}>{digit}</button> // CREATE DIGITS BUTTONS AND MAP THROUGH DIGITS ARRAY TO DISPLAY DIGITS 1-9 ON BUTTONS 
           ))}
-          <button onClick={() => updateCalc('0')} className='operator'>0</button>
+          <button onClick={() => updateCalc('0')} className='zero digit'>0</button>
           <button onClick={calculate} className='operator equalTo'>=</button>
-          <button onClick={posNeg} className='operator'>+/-</button>
-          <button onClick={() => bracket('(')} className='operator'>(</button>
-          <button onClick={() => bracket(')')} className='operator'>)</button>
-          <button onClick={square} className='operator'>^</button>
-          <button onClick={cube} className='operator'>^<sup>3</sup></button>
-          <button onClick={squareRoot} className='operator'>√</button>
-          <button onClick={pi} className='operator'>π</button>
-          <button onClick={e} className='operator'>e</button>
-          <button onClick={log} className='operator'>log</button>
-          <button onClick={ln} className='operator'>ln<sub>10</sub></button>
-          <button onClick={sin} className='operator'>sin</button>
-          <button onClick={cos} className='operator'>cos</button>
-          <button onClick={tan} className='operator'>tan</button>
+          <button onClick={cube} className='operator cube'>^<sup>3</sup></button>
+          <button onClick={squareRoot} className='operator sqrt'>√</button>
+          <button onClick={pi} className='operator pie'>π</button>
+          <button onClick={e} className='operator exponent'>e</button>
+          <button onClick={log} className='operator log'>log</button>
+          <button onClick={ln} className='operator logTen'>ln<sub>10</sub></button>
+          <button onClick={sin} className='operator sin'>sin</button>
+          <button onClick={cos} className='operator cos'>cos</button>
+          <button onClick={tan} className='operator tan'>tan</button>
           <button onClick={random} className='operator'>rand</button>
           <button onClick={round} className='operator'>round</button>
           <button onClick={reciprocal} className='operator'>1/x</button>
+          <button onClick={ceil} className='operator'>ceil</button>
+          <button onClick={floor} className='operator'>floor</button>
+          <button onClick={abs} className='operator'>abs</button>
+          <button onClick={exp} className='operator'>exp</button>
+          <button onClick={cbrt} className='operator'>cbrt</button>
+          <button onClick={factorial} className='operator'>n!</button>
         </div>
       </div>
     </div>
