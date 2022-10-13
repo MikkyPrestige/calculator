@@ -117,6 +117,10 @@ body {
  grid-row: 4;
 }
 
+.exponent {
+ grid-row: 5;
+}
+
 .pie {
  grid-row: 5;
 }
@@ -127,10 +131,6 @@ body {
 
 .logTen {
  grid-row: 4;
-}
-
-.exponent {
- grid-row: 5;
 }
 
 .sin {

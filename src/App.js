@@ -7,7 +7,7 @@ function App() {
   const [result, setResult] = useState("");
 
   // OPERATORS VARIABLE IS AN ARRAY OF OPERATORS THAT WILL BE USED TO CHECK IF THE USER IS TRYING TO ENTER AN OPERATOR OR NOT 
-  const ops = ["+", "-", "*", "/", "."];
+  const ops = ["+", "-", "×", "÷", "."];
 
   // UPDATE CALC STATE VARIABLE WITH THE VALUE OF THE BUTTON THAT WAS CLICKED 
   const updateCalc = value => {
@@ -129,6 +129,78 @@ function App() {
       return;
     }
     setCalc((value * 3.141592653589793).toString());  // MULTIPLY THE CALC STATE VARIABLE BY PI AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE GREATER THAN FUNCTION
+  const greaterThan = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value > 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS GREATER THAN 0 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE LESS THAN FUNCTION
+  const lessThan = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value < 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS LESS THAN 0 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  //   CREATE GREATERTHANDOREQUAL FUNCTION
+  const greaterThanOrEqual = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value >= 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS GREATER THAN OR EQUAL TO 0 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE LESSTHANDOREQUAL FUNCTION
+  const lessThanOrEqual = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value <= 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS LESS THAN OR EQUAL TO 0 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE EQUALS FUNCTION
+  const equalTo = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value === 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS EQUAL TO 0 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE NOT EQUALS FUNCTION
+  const notEqualTo = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value !== 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS NOT EQUAL TO 0 AND UPDATE THE CALC STATE VARIABLE
   };
 
   // CREATE E FUNCTION
@@ -264,7 +336,7 @@ function App() {
   };
 
   // CREATE ABSOLUTE VALUE FUNCTION
-  const abs = () => {
+  const absolute = () => {
     if (calc === "") {
       return;
     }
@@ -276,7 +348,7 @@ function App() {
   };
 
   // CREATE EXPONENTIAL FUNCTION
-  const exp = () => {
+  const exponential = () => {
     if (calc === "") {
       return;
     }
@@ -288,7 +360,7 @@ function App() {
   };
 
   // CREATE CUBE ROOT FUNCTION
-  const cbrt = () => {
+  const cubeRoot = () => {
     if (calc === "") {
       return;
     }
@@ -348,20 +420,20 @@ function App() {
           <button onClick={posNeg} className='operator'>+/-</button>
           <button onClick={() => bracket('(')} className='operator'>(</button>
           <button onClick={() => bracket(')')} className='operator'>)</button>
-          <button onClick={square} className='operator'>^</button>
+          <button onClick={square} className='operator'>X²</button>
           <button onClick={del} className='operator delete'>DEL</button>
           <button onClick={() => updateCalc('+')} className='operator'>+</button>
           <button onClick={() => updateCalc('-')} className='operator'>-</button>
           <button onClick={percentage} className='operator'>%</button>
-          <button onClick={() => updateCalc('*')} className='operator'>*</button>
-          <button onClick={() => updateCalc('/')} className='operator'>/</button>
+          <button onClick={() => updateCalc('×')} className='operator'>×</button>
+          <button onClick={() => updateCalc('÷')} className='operator'>÷</button>
           <button onClick={() => updateCalc('.')} className='operator'>.</button>
           {createDigits().map((digit) => (
             <button onClick={() => updateCalc(digit.toString())} className='digit' key={digit}>{digit}</button> // CREATE DIGITS BUTTONS AND MAP THROUGH DIGITS ARRAY TO DISPLAY DIGITS 1-9 ON BUTTONS 
           ))}
           <button onClick={() => updateCalc('0')} className='zero digit'>0</button>
           <button onClick={calculate} className='operator equalTo'>=</button>
-          <button onClick={cube} className='operator cube'>^<sup>3</sup></button>
+          <button onClick={cube} className='operator cube'>X<sup>3</sup></button>
           <button onClick={squareRoot} className='operator sqrt'>√</button>
           <button onClick={pi} className='operator pie'>π</button>
           <button onClick={e} className='operator exponent'>e</button>
@@ -370,15 +442,22 @@ function App() {
           <button onClick={sin} className='operator sin'>sin</button>
           <button onClick={cos} className='operator cos'>cos</button>
           <button onClick={tan} className='operator tan'>tan</button>
-          <button onClick={random} className='operator'>rand</button>
-          <button onClick={round} className='operator'>round</button>
+          <button onClick={random} className='operator'>P(X=x)</button>
+          <button onClick={round} className='operator'>≈</button>
           <button onClick={reciprocal} className='operator'>1/x</button>
-          <button onClick={ceil} className='operator'>ceil</button>
-          <button onClick={floor} className='operator'>floor</button>
-          <button onClick={abs} className='operator'>abs</button>
-          <button onClick={exp} className='operator'>exp</button>
-          <button onClick={cbrt} className='operator'>cbrt</button>
+          <button onClick={ceil} className='operator'>⌈x⌉</button>
+          <button onClick={floor} className='operator'>⌊x⌋</button>
+          <button onClick={absolute} className='operator'>|x|</button>
+          <button onClick={exponential} className='operator'>(^)</button>
+          <button onClick={cubeRoot} className='operator'>3√</button>
           <button onClick={factorial} className='operator'>n!</button>
+          <button onClick={equalTo} className='operator'>==</button>
+          <button onClick={lessThan} className='operator'>{'<'}</button>
+          <button onClick={greaterThan} className='operator'>{'>'}</button>
+          <button onClick={lessThanOrEqual} className='operator'>{"<="}</button>
+          <button onClick={greaterThanOrEqual} className='operator'>{'>='}</button>
+          <button onClick={notEqualTo} className='operator'>!=</button>
+
         </div>
       </div>
     </div>
