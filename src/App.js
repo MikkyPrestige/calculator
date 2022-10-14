@@ -7,7 +7,7 @@ function App() {
   const [result, setResult] = useState("");
 
   // OPERATORS VARIABLE IS AN ARRAY OF OPERATORS THAT WILL BE USED TO CHECK IF THE USER IS TRYING TO ENTER AN OPERATOR OR NOT 
-  const ops = ["+", "-", "×", "÷", "."];
+  const ops = ["+", "-", "×", "÷", ".", "<"];
 
   // UPDATE CALC STATE VARIABLE WITH THE VALUE OF THE BUTTON THAT WAS CLICKED 
   const updateCalc = value => {
@@ -131,78 +131,6 @@ function App() {
     setCalc((value * 3.141592653589793).toString());  // MULTIPLY THE CALC STATE VARIABLE BY PI AND UPDATE THE CALC STATE VARIABLE
   };
 
-  // CREATE GREATER THAN FUNCTION
-  const greaterThan = () => {
-    if (calc === "") {
-      return;
-    }
-    const value = parseFloat(calc);
-    if (value === 0) {
-      return;
-    }
-    setCalc((value > 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS GREATER THAN 0 AND UPDATE THE CALC STATE VARIABLE
-  };
-
-  // CREATE LESS THAN FUNCTION
-  const lessThan = () => {
-    if (calc === "") {
-      return;
-    }
-    const value = parseFloat(calc);
-    if (value === 0) {
-      return;
-    }
-    setCalc((value < 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS LESS THAN 0 AND UPDATE THE CALC STATE VARIABLE
-  };
-
-  //   CREATE GREATERTHANDOREQUAL FUNCTION
-  const greaterThanOrEqual = () => {
-    if (calc === "") {
-      return;
-    }
-    const value = parseFloat(calc);
-    if (value === 0) {
-      return;
-    }
-    setCalc((value >= 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS GREATER THAN OR EQUAL TO 0 AND UPDATE THE CALC STATE VARIABLE
-  };
-
-  // CREATE LESSTHANDOREQUAL FUNCTION
-  const lessThanOrEqual = () => {
-    if (calc === "") {
-      return;
-    }
-    const value = parseFloat(calc);
-    if (value === 0) {
-      return;
-    }
-    setCalc((value <= 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS LESS THAN OR EQUAL TO 0 AND UPDATE THE CALC STATE VARIABLE
-  };
-
-  // CREATE EQUALS FUNCTION
-  const equalTo = () => {
-    if (calc === "") {
-      return;
-    }
-    const value = parseFloat(calc);
-    if (value === 0) {
-      return;
-    }
-    setCalc((value === 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS EQUAL TO 0 AND UPDATE THE CALC STATE VARIABLE
-  };
-
-  // CREATE NOT EQUALS FUNCTION
-  const notEqualTo = () => {
-    if (calc === "") {
-      return;
-    }
-    const value = parseFloat(calc);
-    if (value === 0) {
-      return;
-    }
-    setCalc((value !== 0).toString());  // CHECK IF THE CALC STATE VARIABLE IS NOT EQUAL TO 0 AND UPDATE THE CALC STATE VARIABLE
-  };
-
   // CREATE E FUNCTION
   const e = () => {
     if (calc === "") {
@@ -275,6 +203,54 @@ function App() {
     setCalc(Math.tan(value).toString());  // CALCULATE THE TANGENT OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
   };
 
+// CREATE POWER FUNCTION
+  const power = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.pow(value).toString());  // CALCULATE THE POWER OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE RADIAN FUNCTION
+  const radian = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value * 0.017453292519943295).toString());  // MULTIPLY THE CALC STATE VARIABLE BY PI AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE DEGREE FUNCTION
+  const degree = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value * 57.29577951308232).toString());  // MULTIPLY THE CALC STATE VARIABLE BY DEGREE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE RADIUS FUNCTION
+  const radius = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value * 0.5).toString());  // MULTIPLY THE CALC STATE VARIABLE BY RADIUS AND UPDATE THE CALC STATE VARIABLE
+  };
+
   // CREATE RECIPROCAL FUNCTION
   const reciprocal = () => {
     if (calc === "") {
@@ -284,7 +260,7 @@ function App() {
     if (value === 0) {
       return;
     }
-    setCalc((1 / value).toString());  // RECIPROCAL OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+    setCalc((1 / value).toString());  // DIVIDE 1 BY THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
   };
 
   // CREATE RANDOM FUNCTION
@@ -451,13 +427,17 @@ function App() {
           <button onClick={exponential} className='operator'>(^)</button>
           <button onClick={cubeRoot} className='operator'>3√</button>
           <button onClick={factorial} className='operator'>n!</button>
-          <button onClick={equalTo} className='operator'>==</button>
-          <button onClick={lessThan} className='operator'>{'<'}</button>
-          <button onClick={greaterThan} className='operator'>{'>'}</button>
-          <button onClick={lessThanOrEqual} className='operator'>{"<="}</button>
-          <button onClick={greaterThanOrEqual} className='operator'>{'>='}</button>
-          <button onClick={notEqualTo} className='operator'>!=</button>
-
+          <button onClick={() => updateCalc('==')} className='operator'>==</button>
+          <button onClick={() => updateCalc('<')} className='operator'>{'<'}</button>
+          <button onClick={() => updateCalc('>')} className='operator'>{'>'}</button>
+          <button onClick={() => updateCalc('<=')} className='operator'>{'<='}</button>
+          <button onClick={() => updateCalc('>=')} className='operator'>{'>='}</button>
+          <button onClick={() => updateCalc('!=')} className='operator'>{'!='}</button>
+          <button onClick={power} className='operator'>x<sup>y</sup></button>
+          <button onclick={radian} className='operator'>rad</button>
+          <button onclick={degree} className='operator'>deg</button>
+          <button onclick={radius} className='operator'>R</button>
+          
         </div>
       </div>
     </div>
