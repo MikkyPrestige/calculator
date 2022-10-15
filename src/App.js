@@ -7,7 +7,7 @@ function App() {
   const [result, setResult] = useState("");
 
   // OPERATORS VARIABLE IS AN ARRAY OF OPERATORS THAT WILL BE USED TO CHECK IF THE USER IS TRYING TO ENTER AN OPERATOR OR NOT 
-  const ops = ["+", "-", "×", "÷", ".", "<"];
+  const ops = ["+", "-", "*", "/", ".", "<", ">","<=", ">=", "±", "%", "!="]; 
 
   // UPDATE CALC STATE VARIABLE WITH THE VALUE OF THE BUTTON THAT WAS CLICKED 
   const updateCalc = value => {
@@ -43,6 +43,7 @@ function App() {
   // CREATE EVALUATE FUNCTION
   const calculate = () => {
     setCalc(eval(calc).toString());  // EVALUATE THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+    setResult("");  // SET RESULT STATE VARIABLE TO EMPTY
   };
 
   // CREATE PERCENTAGE FUNCTION
@@ -156,7 +157,7 @@ function App() {
   };
 
   // CREATE BASE 10 LOG FUNCTION
-  const ln = () => {
+  const log10 = () => {
     if (calc === "") {
       return;
     }
@@ -165,6 +166,30 @@ function App() {
       return;
     }
     setCalc(Math.log10(value).toString());  // CALCULATE THE BASE 10 LOGARITHM OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE BASE 2 LOG FUNCTION
+  const log2 = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.log2(value).toString());  // CALCULATE THE BASE 2 LOGARITHM OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE RAISE TO POWER 10 FUNCTION
+  const pow10 = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.pow(10, value).toString());  // RAISE 10 TO THE POWER OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
   };
 
   // CREATE SIN FUNCTION
@@ -203,8 +228,8 @@ function App() {
     setCalc(Math.tan(value).toString());  // CALCULATE THE TANGENT OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
   };
 
-// CREATE POWER FUNCTION
-  const power = () => {
+  // CREATE INVERSE SIN FUNCTION
+  const asin = () => {
     if (calc === "") {
       return;
     }
@@ -212,8 +237,129 @@ function App() {
     if (value === 0) {
       return;
     }
-    setCalc(Math.pow(value).toString());  // CALCULATE THE POWER OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+    setCalc(Math.asin(value).toString());  // CALCULATE THE INVERSE SINE OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
   };
+
+  // CREATE INVERSE COS FUNCTION
+  const acos = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.acos(value).toString());  // CALCULATE THE INVERSE COSINE OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE INVERSE TAN FUNCTION
+  const atan = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.atan(value).toString());  // CALCULATE THE INVERSE TANGENT OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE SINH FUNCTION
+  const sinh = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.sinh(value).toString());  // CALCULATE THE HYPERBOLIC SINE OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE COSH FUNCTION
+  const cosh = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.cosh(value).toString());  // CALCULATE THE HYPERBOLIC COSINE OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE TANH FUNCTION
+  const tanh = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.tanh(value).toString());  // CALCULATE THE HYPERBOLIC TANGENT OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE INVERSE SINH FUNCTION
+  const asinh = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.asinh(value).toString());  // CALCULATE THE INVERSE HYPERBOLIC SINE OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE INVERSE COSH FUNCTION
+  const acosh = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.acosh(value).toString());  // CALCULATE THE INVERSE HYPERBOLIC COSINE OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE INVERSE TANH FUNCTION
+  const atanh = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.atanh(value).toString());  // CALCULATE THE INVERSE HYPERBOLIC TANGENT OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // // CREATE MODULO FUNCTION
+  // const modulo = () => {
+  //   if (calc === "") {
+  //     return;
+  //   }
+  //   const value = parseFloat(calc);
+  //   if (value === 0) {
+  //     return;
+  //   }
+  //   setCalc((value % 2).toString());  // CALCULATE THE MODULO OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE (MODULO RETURNS THE REMAINDER OF A DIVISION)
+  // };
+
+  // CREATE HYPOTENUSE FUNCTION
+  const hyp = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.hypot(value).toString());  // CALCULATE THE HYPOTENUSE OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
 
   // CREATE RADIAN FUNCTION
   const radian = () => {
@@ -224,7 +370,7 @@ function App() {
     if (value === 0) {
       return;
     }
-    setCalc((value * 0.017453292519943295).toString());  // MULTIPLY THE CALC STATE VARIABLE BY PI AND UPDATE THE CALC STATE VARIABLE
+    setCalc((value * 0.017453292519943295).toString());  // MULTIPLY THE CALC STATE VARIABLE BY RADIAN AND UPDATE THE CALC STATE VARIABLE
   };
 
   // CREATE DEGREE FUNCTION
@@ -251,7 +397,7 @@ function App() {
     setCalc((value * 0.5).toString());  // MULTIPLY THE CALC STATE VARIABLE BY RADIUS AND UPDATE THE CALC STATE VARIABLE
   };
 
-  // CREATE RECIPROCAL FUNCTION
+  // CREATE RECIPROCAL/INVERSE FUNCTION
   const reciprocal = () => {
     if (calc === "") {
       return;
@@ -285,6 +431,78 @@ function App() {
       return;
     }
     setCalc(Math.round(value).toString());  // ROUND THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE RATIO FUNCTION
+  const ratio = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value * 0.01).toString());  // MULTIPLY THE CALC STATE VARIABLE BY RATIO AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE RATE FUNCTION
+  const rate = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value * 100).toString());  // MULTIPLY THE CALC STATE VARIABLE BY RATE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE MEAN FUNCTION
+  const mean = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value / 2).toString());  // DIVIDE THE CALC STATE VARIABLE BY 2 AND UPDATE THE CALC STATE VARIABLE (MEAN IS THE AVERAGE OF TWO NUMBERS)  
+  };
+
+  // CREATE MEDIAN FUNCTION
+  const median = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value / 2).toString());  // DIVIDE THE CALC STATE VARIABLE BY 2 AND UPDATE THE CALC STATE VARIABLE (MEDIAN IS THE MIDDLE NUMBER OF A SET OF NUMBERS)   
+  };
+
+  // CREATE MODE FUNCTION
+  const mode = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value / 2).toString());  // DIVIDE THE CALC STATE VARIABLE BY 2 AND UPDATE THE CALC STATE VARIABLE (MODE IS THE NUMBER THAT APPEARS MOST OFTEN IN A SET OF NUMBERS)
+  };
+
+  // CREATE RANGE FUNCTION
+  const range = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc((value / 2).toString());  // DIVIDE THE CALC STATE VARIABLE BY 2 AND UPDATE THE CALC STATE VARIABLE (RANGE IS THE DIFFERENCE BETWEEN THE HIGHEST AND LOWEST NUMBERS IN A SET OF NUMBERS)
   };
 
   // CREATE CEILING FUNCTION
@@ -382,6 +600,9 @@ function App() {
   //RETURN THE CALCULATOR SCREEN AND BUTTONS 
   return (
     <div className='app'>
+      <header>
+        <h1 className='heading'>React Calculator</h1>
+      </header>
       <div className='app-container'>
         <div className='display'>
           <div className='display-calc'>
@@ -396,35 +617,35 @@ function App() {
           <button onClick={posNeg} className='operator'>+/-</button>
           <button onClick={() => bracket('(')} className='operator'>(</button>
           <button onClick={() => bracket(')')} className='operator'>)</button>
-          <button onClick={square} className='operator'>X²</button>
+          <button onClick={square} className='operator'>x²</button>
           <button onClick={del} className='operator delete'>DEL</button>
           <button onClick={() => updateCalc('+')} className='operator'>+</button>
           <button onClick={() => updateCalc('-')} className='operator'>-</button>
           <button onClick={percentage} className='operator'>%</button>
-          <button onClick={() => updateCalc('×')} className='operator'>×</button>
-          <button onClick={() => updateCalc('÷')} className='operator'>÷</button>
+          <button onClick={() => updateCalc('*')} className='operator'>x</button>
+          <button onClick={() => updateCalc('/')} className='operator'>÷</button>
           <button onClick={() => updateCalc('.')} className='operator'>.</button>
           {createDigits().map((digit) => (
             <button onClick={() => updateCalc(digit.toString())} className='digit' key={digit}>{digit}</button> // CREATE DIGITS BUTTONS AND MAP THROUGH DIGITS ARRAY TO DISPLAY DIGITS 1-9 ON BUTTONS 
           ))}
           <button onClick={() => updateCalc('0')} className='zero digit'>0</button>
           <button onClick={calculate} className='operator equalTo'>=</button>
-          <button onClick={cube} className='operator cube'>X<sup>3</sup></button>
+          <button onClick={cube} className='operator cube'>x³</button>
           <button onClick={squareRoot} className='operator sqrt'>√</button>
           <button onClick={pi} className='operator pie'>π</button>
           <button onClick={e} className='operator exponent'>e</button>
           <button onClick={log} className='operator log'>log</button>
-          <button onClick={ln} className='operator logTen'>ln<sub>10</sub></button>
+          <button onClick={log10} className='operator logTen'>log<sub>10</sub></button>
           <button onClick={sin} className='operator sin'>sin</button>
           <button onClick={cos} className='operator cos'>cos</button>
           <button onClick={tan} className='operator tan'>tan</button>
-          <button onClick={random} className='operator'>P(X=x)</button>
+          <button onClick={random} className='operator'>E(X)</button>
           <button onClick={round} className='operator'>≈</button>
           <button onClick={reciprocal} className='operator'>1/x</button>
           <button onClick={ceil} className='operator'>⌈x⌉</button>
           <button onClick={floor} className='operator'>⌊x⌋</button>
           <button onClick={absolute} className='operator'>|x|</button>
-          <button onClick={exponential} className='operator'>(^)</button>
+          <button onClick={exponential} className='operator'>Exp</button>
           <button onClick={cubeRoot} className='operator'>3√</button>
           <button onClick={factorial} className='operator'>n!</button>
           <button onClick={() => updateCalc('==')} className='operator'>==</button>
@@ -433,13 +654,26 @@ function App() {
           <button onClick={() => updateCalc('<=')} className='operator'>{'<='}</button>
           <button onClick={() => updateCalc('>=')} className='operator'>{'>='}</button>
           <button onClick={() => updateCalc('!=')} className='operator'>{'!='}</button>
-          <button onClick={power} className='operator'>x<sup>y</sup></button>
-          <button onclick={radian} className='operator'>rad</button>
-          <button onclick={degree} className='operator'>deg</button>
-          <button onclick={radius} className='operator'>R</button>
-          
+          <button onClick={radian} className='operator'>rad</button>
+          <button onClick={degree} className='operator'>deg</button>
+          <button onClick={radius} className='operator'>R</button>
+          <button onClick={asin} className='operator'>sin<sup>-1</sup></button>
+          <button onClick={acos} className='operator'>cos<sup>-1</sup></button>
+          <button onClick={atan} className='operator'>tan<sup>-1</sup></button>
+          <button onClick={hyp} className='operator'>h</button>
+          <button onClick={() => updateCalc('%')} className='operator'>mod</button>
+          <button onClick={() => updateCalc('**')} className='operator'>^</button>
+          <button onClick={sinh} className='operator'>sinh</button>
+          <button onClick={cosh} className='operator'>cosh</button>
+          <button onClick={tanh} className='operator'>tanh</button>
+          <button onClick={asinh} className='operator'>sinh<sup>-1</sup></button>
+          <button onClick={acosh} className='operator'>cosh<sup>-1</sup></button>
+          <button onClick={atanh} className='operator'>tanh<sup>-1</sup></button>
+          <button onClick={log2} className='operator'>log<sub>2</sub></button>
+          <button onClick={pow10} className='operator'>10<sup>x</sup></button>
         </div>
       </div>
+      <footer className='attribution'>&copy;meeky_berry/2022</footer>
     </div>
   );
 }

@@ -9,19 +9,20 @@ body {
  background: #1e272e;
 }
 
-.app {
- text-align: center;
+.heading {
+  color: #d2dae2;
+  text-align: center;
+  margin: 1rem;
 }
 
 .app-container {
  width: 100%;
  max-width: 400px;
- margin: 10rem auto;
- border: none;
+ margin: 1rem auto;
 }
 
 .display {
-  background-color: #d2dae2;
+ background-color: #d2dae2;
  color: #2C3A47;
  height: 4rem;
  font-size: 1.8rem;
@@ -29,7 +30,7 @@ body {
  display: flex;
  flex-direction: column;
  padding: .5rem;
-
+ border-radius: .2rem;
 }
 
 .display-calc {
@@ -52,6 +53,7 @@ body {
  grid-gap: .5rem;
  background-color: #4b6584;
  padding: 1rem;
+ border-radius: .3rem;
 }
 
 .operator {
@@ -148,4 +150,9 @@ body {
 .zero {
  grid-row: 6;
  grid-column: 5;
+}
+
+.attribution {
+  color: #d2dae2;
+  text-align: center;
 }
