@@ -14,7 +14,7 @@
 //  const updateOperator = value => {
 //   if (
 //    (ops.includes(value) && operator === "") || // IF THE VALUE IS AN OPERATOR
-//    (ops.includes(value) && ops.includes(operator.slice(-1))) // IF THE VALUE IS AN OPERATOR AND THE LAST CHARACTER OF THE OPERATOR STATE IS AN OPERATOR TOO 
+//    (ops.includes(value) && ops.includes(operator.slice(-1))) // IF THE VALUE IS AN OPERATOR AND THE LAST CHARACTER OF THE OPERATOR STATE IS AN OPERATOR TOO
 //   ) {
 //    return;
 //   } else {
@@ -44,3 +44,5 @@
 
 
 // export default Operators;
+
+

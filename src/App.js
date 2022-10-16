@@ -5,9 +5,10 @@ function App() {
   // DECLARE A NEW STATE VARIABLE  
   const [calc, setCalc] = useState("");
   const [result, setResult] = useState("");
+  const [memory, setMemory] = useState("");
 
   // OPERATORS VARIABLE IS AN ARRAY OF OPERATORS THAT WILL BE USED TO CHECK IF THE USER IS TRYING TO ENTER AN OPERATOR OR NOT 
-  const ops = ["+", "-", "*", "/", ".", "<", ">","<=", ">=", "±", "%", "!="]; 
+  const ops = ["+", "-", "*", "/", ".", "<", ">", "<=", ">=", "±", "%", "!=", ":"];
 
   // UPDATE CALC STATE VARIABLE WITH THE VALUE OF THE BUTTON THAT WAS CLICKED 
   const updateCalc = value => {
@@ -72,13 +73,8 @@ function App() {
 
   // CREATE BRACKET FUNCTION
   const bracket = value => {
-    if (calc === "" && value === "(") { // IF THE CALC STATE VARIABLE IS EMPTY AND THE VALUE IS "("
+    if (calc === "" && value === "(" && ")") { // IF THE CALC STATE VARIABLE IS EMPTY AND THE VALUE IS "(" && ")"
       setCalc(calc + value);
-      return;
-    }
-    if (ops.includes(calc.slice(-1))) { // IF THE LAST CHARACTER OF THE CALC STATE VARIABLE IS AN OPERATOR 
-      const newCalc = calc.slice(0, -1) + value; // REMOVE THE LAST CHARACTER OF THE CALC STATE VARIABLE AND ADD THE VALUE
-      setCalc(newCalc);  // UPDATE THE CALC STATE VARIABLE
       return;
     }
     setCalc(calc + value);  // UPDATE THE CALC STATE VARIABLE WITH THE VALUE OF THE BUTTON THAT WAS CLICKED
@@ -178,6 +174,126 @@ function App() {
       return;
     }
     setCalc(Math.log2(value).toString());  // CALCULATE THE BASE 2 LOGARITHM OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE LOG1P FUNCTION
+  const log1p = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.log1p(value).toString());  // CALCULATE THE LOGARITHM OF THE CALC STATE VARIABLE PLUS 1 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE LN2 FUNCTION
+  const ln2 = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.LN2(value).toString());  // CALCULATE THE BASE 2 LOGARITHM OF THE CALC STATE VARIABLE PLUS 1 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE LN10 FUNCTION
+  const ln10 = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.LN10(value).toString());  // CALCULATE THE BASE 10 LOGARITHM OF THE CALC STATE VARIABLE PLUS 1 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE LOG10E FUNCTION
+  const log10e = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.LOG10E(value).toString());  // CALCULATE THE BASE 10 LOGARITHM OF THE CALC STATE VARIABLE PLUS 1 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE LOG2E FUNCTION
+  const log2e = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.LOG2E(value).toString());  // CALCULATE THE BASE 2 LOGARITHM OF THE CALC STATE VARIABLE PLUS 1 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE VARIANCES FUNCTION
+  const variances = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.var(value).toString());  // CALCULATE THE VARIANCE OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE STANDARD DEVIATION FUNCTION
+  const standardDeviation = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.std(value).toString());  // CALCULATE THE STANDARD DEVIATION OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE EXPONENTIAL -1 FUNCTION
+  const expm1 = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.expm1(value).toString());  // CALCULATE THE EXPONENTIAL OF THE CALC STATE VARIABLE MINUS 1 AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE SIGN FUNCTION
+  const sign = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.sign(value).toString());  // CALCULATE THE SIGN OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
+  };
+
+  // CREATE TRUNC FUNCTION
+  const trunc = () => {
+    if (calc === "") {
+      return;
+    }
+    const value = parseFloat(calc);
+    if (value === 0) {
+      return;
+    }
+    setCalc(Math.trunc(value).toString());  // CALCULATE THE TRUNCATED INTEGER OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
   };
 
   // CREATE RAISE TO POWER 10 FUNCTION
@@ -588,6 +704,32 @@ function App() {
     }
   };
 
+  const memoryPlus = () => {
+    // "" === document.calculator.display.value && (document.calculator.display.value = " ");
+    // " " !== document.calculator.display.value && (a = parseFloat(document.calculator.memory.value),
+    //   b = parseFloat(removeCommas(document.calculator.display.value)),
+    //   t = a + b,
+    //   document.calculator.memory.value = t)
+  }
+  const memoryMinus = () => {
+    // "" === document.calculator.display.value && (document.calculator.display.value = " ");
+    // " " !== document.calculator.display.value && (a = parseFloat(document.calculator.memory.value),
+    //   b = parseFloat(removeCommas(document.calculator.display.value)),
+    //   t = a - b,
+    //   document.calculator.memory.value = t)
+  }
+
+  const memoryRecall = () => {
+    // Value = document.calculator.memory.value;
+    // displayValue(Value.trim());
+    // resetFlags();
+    // is_Constant = !0
+  }
+
+  const memoryClear = () => {
+    document.calculator.memory.value = 0
+  }
+
   // CREATE DIGITS FUNCTION
   const createDigits = () => {
     const digits = []; // CREATE DIGITS ARRAY
@@ -613,6 +755,10 @@ function App() {
           </div>
         </div>
         <div className='operators'>
+          <button onClick={memoryRecall} className='operator'>MR</button>
+          <button onClick={memoryPlus} className='operator'>M+</button>
+          <button onClick={memoryMinus} className='operator'>M-</button>
+          <button onClick={memoryClear} className='operator'>MC</button>
           <button onClick={clear} className='operator clear'>AC</button>
           <button onClick={posNeg} className='operator'>+/-</button>
           <button onClick={() => bracket('(')} className='operator'>(</button>
@@ -671,6 +817,22 @@ function App() {
           <button onClick={atanh} className='operator'>tanh<sup>-1</sup></button>
           <button onClick={log2} className='operator'>log<sub>2</sub></button>
           <button onClick={pow10} className='operator'>10<sup>x</sup></button>
+          <button onClick={ratio} className='operator'>:</button>
+          <button onClick={rate} className='operator'>per</button>
+          <button onClick={mean} className='operator'>μ</button>
+          <button onClick={median} className='operator'>μ<sub>1/2</sub></button>
+          <button onClick={mode} className='operator'>mode</button>
+          <button onClick={range} className='operator'>range</button>
+          <button onClick={variances} className='operator'>σ²</button>
+          <button onClick={standardDeviation} className='operator'>SD</button>
+          <button onClick={log1p} className='operator'>log(1+x)</button>
+          <button onClick={ln2} className='operator'>LN2</button>
+          <button onClick={ln10} className='operator'>LN10</button>
+          <button onClick={log2e} className='operator'>LOG2E</button>
+          <button onClick={log10e} className='operator'>LOG10E</button>
+          <button onClick={expm1} className='operator'>exp(x)-1</button>
+          <button onClick={sign} className='operator'>sign</button>
+          <button onClick={trunc} className='operator'>(x)</button>
         </div>
       </div>
       <footer className='attribution'>&copy;meeky_berry/2022</footer>
