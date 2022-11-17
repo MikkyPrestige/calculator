@@ -272,18 +272,19 @@ body {
 }
 
 .dot {
-  background-color: #d2dae2;
-  color: #2C3A47;
-}
-
-.dot:hover {
-  background-color: #2C3A47;
+  background-color: #fbc531;
   color: #d2dae2;
-}
+  /* font-size: 2rem; */
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: .2rem;
+  border: 1px solid #d2dae2;
+  margin: .5rem 0;
+  grid-column: 4 / 5;
+  grid-row: 6 / 7;
 
-.dot:active {
-  background-color: #d2dae2;
-  color: #2C3A47;
 }
 
 .attribution {

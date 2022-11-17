@@ -271,21 +271,6 @@ body {
   grid-row: 7 / 8;
 }
 
-.dot {
-  background-color: #d2dae2;
-  color: #2C3A47;
-}
-
-.dot:hover {
-  background-color: #2C3A47;
-  color: #d2dae2;
-}
-
-.dot:active {
-  background-color: #d2dae2;
-  color: #2C3A47;
-}
-
 .attribution {
   color: #d2dae2;
   text-align: center;

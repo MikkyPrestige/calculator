@@ -613,7 +613,7 @@ function App() {
               {digit}
             </button> // CREATE DIGITS BUTTONS AND MAP THROUGH DIGITS ARRAY TO DISPLAY DIGITS 1-9 ON BUTTONS
           ))}
-          <button onClick={() => updateCalc(".")} className="operator dot">
+          <button onClick={() => updateCalc(".")} className="operator">
             .
           </button>
           <button onClick={() => updateCalc("0")} className="zero digit">

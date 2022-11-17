@@ -273,17 +273,8 @@ body {
 
 .dot {
   background-color: #d2dae2;
-  color: #2C3A47;
-}
+  /* color: #d2dae2; */
 
-.dot:hover {
-  background-color: #2C3A47;
-  color: #d2dae2;
-}
-
-.dot:active {
-  background-color: #d2dae2;
-  color: #2C3A47;
 }
 
 .attribution {
