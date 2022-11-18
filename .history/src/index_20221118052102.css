@@ -65,12 +65,13 @@ body {
   color: #d2dae2;
   font-size: 1.5rem;
   font-weight: 700;
-  height: 3rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: .2rem;
   border: 1px solid #d2dae2;
+  margin: .5rem 0;
 }
 
 .operator:hover {
@@ -89,36 +90,26 @@ body {
   color: #2C3A47;
   font-size: 1.5rem;
   font-weight: 700;
-  height: 3rem;
+  /* height: 4rem; */
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: .2rem;
   border: 1px solid #d2dae2;
+  margin: .5rem 0;
 }
-
-.primary--operator:hover {
-  background-color: #2C3A47;
-  color: #fbc531;
-  cursor: pointer;
-}
-
-.primary--operator:active {
-  background-color: #fbc531;
-  color: #2C3A47;
-}
-
 .digit {
   background-color: #d2dae2;
   color: #2C3A47;
   font-size: 1.5rem;
   font-weight: 700;
-  height: 3rem;
+  height: 4rem;
   display: flex;
   justify-content: center;
   align-items: center;
   border-radius: .2rem;
   border: 1px solid #d2dae2;
+  margin: .5rem 0;
 }
 
 .digit:hover {
@@ -316,10 +307,6 @@ body {
 }
 
 .attribution {
-  color: #fbc531;
+  color: #d2dae2;
   text-align: center;
-}
-
-.attribution a {
-  color: #fbc531;
 }

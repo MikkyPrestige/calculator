@@ -323,3 +323,9 @@ body {
 .attribution a {
   color: #fbc531;
 }
+
+@media screen and (max-width: 900px) {
+.operators {
+  grid-template-columns: repeat(8, 1fr);
+}
+}

@@ -97,17 +97,6 @@ body {
   border: 1px solid #d2dae2;
 }
 
-.primary--operator:hover {
-  background-color: #2C3A47;
-  color: #fbc531;
-  cursor: pointer;
-}
-
-.primary--operator:active {
-  background-color: #fbc531;
-  color: #2C3A47;
-}
-
 .digit {
   background-color: #d2dae2;
   color: #2C3A47;
@@ -316,10 +305,6 @@ body {
 }
 
 .attribution {
-  color: #fbc531;
+  color: #d2dae2;
   text-align: center;
-}
-
-.attribution a {
-  color: #fbc531;
 }

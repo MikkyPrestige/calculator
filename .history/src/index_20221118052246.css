@@ -71,6 +71,7 @@ body {
   align-items: center;
   border-radius: .2rem;
   border: 1px solid #d2dae2;
+  /* margin: .5rem 0; */
 }
 
 .operator:hover {
@@ -95,17 +96,7 @@ body {
   align-items: center;
   border-radius: .2rem;
   border: 1px solid #d2dae2;
-}
-
-.primary--operator:hover {
-  background-color: #2C3A47;
-  color: #fbc531;
-  cursor: pointer;
-}
-
-.primary--operator:active {
-  background-color: #fbc531;
-  color: #2C3A47;
+  /* margin: .5rem 0; */
 }
 
 .digit {
@@ -119,6 +110,7 @@ body {
   align-items: center;
   border-radius: .2rem;
   border: 1px solid #d2dae2;
+  /* margin: .3rem 0; */
 }
 
 .digit:hover {
@@ -316,10 +308,6 @@ body {
 }
 
 .attribution {
-  color: #fbc531;
+  color: #d2dae2;
   text-align: center;
-}
-
-.attribution a {
-  color: #fbc531;
 }

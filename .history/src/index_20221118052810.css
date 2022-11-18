@@ -323,3 +323,10 @@ body {
 .attribution a {
   color: #fbc531;
 }
+
+@media screen and (max-width: 1000px) {
+  .app-container {
+    width: 100%;
+    height: 100%;
+  }
+}

@@ -553,8 +553,8 @@ function App() {
           <button onClick={clear} className="operator clear">
             AC
           </button>
-          <button onClick={diameter} className="operator">
-            ⌀
+          <button onClick={posNeg} className="operator">
+            +/-
           </button>
           <button onClick={() => bracket("(")} className="operator">
             (
@@ -625,40 +625,25 @@ function App() {
               {digit}
             </button> // CREATE DIGITS BUTTONS AND MAP THROUGH DIGITS ARRAY TO DISPLAY DIGITS 1-9 ON BUTTONS
           ))}
-          <button onClick={posNeg} className="primary--operator">
-            +/-
-          </button>
           <button onClick={() => updateCalc(".")} className="operator dot">
             .
           </button>
           <button onClick={() => updateCalc("0")} className="zero digit">
             0
           </button>
-          <button onClick={percentage} className="primary--operator percentage">
+          <button onClick={percentage} className="operator percentage">
             %
           </button>
-          <button
-            onClick={() => updateCalc("*")}
-            className="primary--operator multiply"
-          >
+          <button onClick={() => updateCalc("*")} className="operator multiply">
             x
           </button>
-          <button
-            onClick={() => updateCalc("/")}
-            className="primary--operator divide"
-          >
+          <button onClick={() => updateCalc("/")} className="operator divide">
             ÷
           </button>
-          <button
-            onClick={() => updateCalc("-")}
-            className="primary--operator minus"
-          >
+          <button onClick={() => updateCalc("-")} className="operator minus">
             -
           </button>
-          <button
-            onClick={() => updateCalc("+")}
-            className="primary--operator plus"
-          >
+          <button onClick={() => updateCalc("+")} className="operator plus">
             +
           </button>
           <button onClick={calculate} className="operator equalTo">
@@ -745,6 +730,7 @@ function App() {
           <button onClick={expm1} className="operator exp">
             exp(x)-1
           </button>
+          <button onClick={diameter} className="operator">⌀</button>
           <button onClick={log1p} className="operator log">
             log(1+x)
           </button>

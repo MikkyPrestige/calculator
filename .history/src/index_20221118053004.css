@@ -323,3 +323,7 @@ body {
 .attribution a {
   color: #fbc531;
 }
+
+@media screen and (max-width: 900px) {
+
+}

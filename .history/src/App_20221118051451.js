@@ -553,9 +553,7 @@ function App() {
           <button onClick={clear} className="operator clear">
             AC
           </button>
-          <button onClick={diameter} className="operator">
-            ⌀
-          </button>
+          <button onClick={diameter} className="operator">⌀</button>
           <button onClick={() => bracket("(")} className="operator">
             (
           </button>
@@ -637,28 +635,16 @@ function App() {
           <button onClick={percentage} className="primary--operator percentage">
             %
           </button>
-          <button
-            onClick={() => updateCalc("*")}
-            className="primary--operator multiply"
-          >
+          <button onClick={() => updateCalc("*")} className="primary--operator multiply">
             x
           </button>
-          <button
-            onClick={() => updateCalc("/")}
-            className="primary--operator divide"
-          >
+          <button onClick={() => updateCalc("/")} className="primary--operator divide">
             ÷
           </button>
-          <button
-            onClick={() => updateCalc("-")}
-            className="primary--operator minus"
-          >
+          <button onClick={() => updateCalc("-")} className="primary--operator minus">
             -
           </button>
-          <button
-            onClick={() => updateCalc("+")}
-            className="primary--operator plus"
-          >
+          <button onClick={() => updateCalc("+")} className="primary--operator plus">
             +
           </button>
           <button onClick={calculate} className="operator equalTo">
