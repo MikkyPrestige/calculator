@@ -224,7 +224,6 @@ function App() {
     }
     setCalc(Math.pow(10, value).toString()); // RAISE 10 TO THE POWER OF THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
   };
-
   // CREATE SIN FUNCTION
   const sin = () => {
     if (calc === "") {
@@ -533,7 +532,6 @@ function App() {
     }
     return digits;
   };
-
   //RETURN THE CALCULATOR SCREEN AND BUTTONS
   return (
     <div className="app">
