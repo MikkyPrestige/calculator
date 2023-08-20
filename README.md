@@ -1,2 +1,0 @@
-##  Calculator
-# Built with react
