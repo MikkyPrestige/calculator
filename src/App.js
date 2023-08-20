@@ -22,6 +22,7 @@ function App() {
 
     if (!ops.includes(value)) {
       // IF THE VALUE IS NOT AN OPERATOR
+      // eslint-disable-next-line
       setResult(eval(calc + value).toString()); // EVALUATE THE CALC STATE VARIABLE AND UPDATE THE RESULT STATE VARIABLE
     }
   };
@@ -43,6 +44,7 @@ function App() {
 
   // CREATE EVALUATE FUNCTION
   const calculate = () => {
+    // eslint-disable-next-line
     setCalc(eval(calc).toString()); // EVALUATE THE CALC STATE VARIABLE AND UPDATE THE CALC STATE VARIABLE
     setResult(""); // SET RESULT STATE VARIABLE TO EMPTY
   };
@@ -536,232 +538,210 @@ function App() {
 
   //RETURN THE CALCULATOR SCREEN AND BUTTONS
   return (
-    <div className="app">
-      <header>
-        <h1 className="heading">React Calculator</h1>
-      </header>
-      <div className="app-container">
-        <div className="display">
-          <div className="display-calc">
-            {calc || "0"} {/* DISPLAY CALC STATE VARIABLE OR 0 */}
-          </div>
-          <div className="display-result">
-            = {result} {/* DISPLAY RESULT STATE VARIABLE */}
-          </div>
+    <main className="container">
+      <div className="display">
+        <div className="display-calc">
+          {calc || "0"} {/* DISPLAY CALC STATE VARIABLE OR 0 */}
         </div>
-        <div className="operators">
-          <button onClick={clear} className="operator clear">
-            AC
-          </button>
-          <button onClick={diameter} className="operator">
-            ⌀
-          </button>
-          <button onClick={() => bracket("(")} className="operator">
-            (
-          </button>
-          <button onClick={() => bracket(")")} className="operator">
-            )
-          </button>
-          <button onClick={square} className="operator">
-            x²
-          </button>
-          <button onClick={del} className="operator delete">
-            DEL
-          </button>
-          <button onClick={cube} className="operator cube">
-            x³
-          </button>
-          <button onClick={() => updateCalc("**")} className="operator">
-            ^
-          </button>
-          <button onClick={log} className="operator log">
-            log
-          </button>
-          <button onClick={log10} className="operator logTen">
-            log<sub>10</sub>
-          </button>
-          <button onClick={log2} className="operator">
-            log<sub>2</sub>
-          </button>
-          <button onClick={pow10} className="operator">
-            10<sup>x</sup>
-          </button>
-          <button onClick={sin} className="operator sin">
-            sin
-          </button>
-          <button onClick={cos} className="operator cos">
-            cos
-          </button>
-          <button onClick={tan} className="operator tan">
-            tan
-          </button>
-          <button onClick={factorial} className="operator factorial">
-            n!
-          </button>
-          <button onClick={round} className="operator">
-            round
-          </button>
-          <button onClick={exponential} className="operator">
-            Exp
-          </button>
-          <button onClick={floor} className="operator">
-            floor
-          </button>
-          <button onClick={e} className="operator exponent">
-            e
-          </button>
-          <button onClick={pi} className="operator pie">
-            π
-          </button>
-          <button onClick={squareRoot} className="operator sqrt">
-            √
-          </button>
-          {createDigits().map((digit) => (
-            <button
-              onClick={() => updateCalc(digit.toString())}
-              className="digit"
-              key={digit}
-            >
-              {digit}
-            </button> // CREATE DIGITS BUTTONS AND MAP THROUGH DIGITS ARRAY TO DISPLAY DIGITS 1-9 ON BUTTONS
-          ))}
-          <button onClick={posNeg} className="primary--operator">
-            +/-
-          </button>
-          <button onClick={() => updateCalc(".")} className="operator dot">
-            .
-          </button>
-          <button onClick={() => updateCalc("0")} className="zero digit">
-            0
-          </button>
-          <button onClick={percentage} className="primary--operator percentage">
-            %
-          </button>
-          <button
-            onClick={() => updateCalc("*")}
-            className="primary--operator multiply"
-          >
-            x
-          </button>
-          <button
-            onClick={() => updateCalc("/")}
-            className="primary--operator divide"
-          >
-            ÷
-          </button>
-          <button
-            onClick={() => updateCalc("-")}
-            className="primary--operator minus"
-          >
-            -
-          </button>
-          <button
-            onClick={() => updateCalc("+")}
-            className="primary--operator plus"
-          >
-            +
-          </button>
-          <button onClick={calculate} className="operator equalTo">
-            =
-          </button>
-          <button onClick={reciprocal} className="operator reciprocal">
-            1/x
-          </button>
-          <button onClick={cubeRoot} className="operator cubeRoot">
-            3√
-          </button>
-          <button onClick={() => updateCalc("==")} className="operator equal">
-            ==
-          </button>
-          <button onClick={() => updateCalc("<")} className="operator greater">
-            {"<"}
-          </button>
-          <button onClick={() => updateCalc(">")} className="operator less">
-            {">"}
-          </button>
-          <button
-            onClick={() => updateCalc("<=")}
-            className="operator greaterTo"
-          >
-            {"<="}
-          </button>
-          <button onClick={() => updateCalc(">=")} className="operator lessTo">
-            {">="}
-          </button>
-          <button
-            onClick={() => updateCalc("!=")}
-            className="operator notequal"
-          >
-            {"!="}
-          </button>
-          <button onClick={radian} className="operator radian">
-            rad
-          </button>
-          <button onClick={degree} className="operator degree">
-            deg
-          </button>
-          <button onClick={radius} className="operator radius">
-            R
-          </button>
-          <button onClick={asin} className="operator">
-            sin<sup>-1</sup>
-          </button>
-          <button onClick={acos} className="operator">
-            cos<sup>-1</sup>
-          </button>
-          <button onClick={atan} className="operator">
-            tan<sup>-1</sup>
-          </button>
-          <button onClick={hyp} className="operator hyp">
-            hyp
-          </button>
-          <button onClick={() => updateCalc("%")} className="operator modulo">
-            mod
-          </button>
-          <button onClick={sinh} className="operator sinH">
-            sinh
-          </button>
-          <button onClick={cosh} className="operator cosH">
-            cosh
-          </button>
-          <button onClick={tanh} className="operator tanH">
-            tanh
-          </button>
-          <button onClick={asinh} className="operator">
-            sinh<sup>-1</sup>
-          </button>
-          <button onClick={acosh} className="operator">
-            cosh<sup>-1</sup>
-          </button>
-          <button onClick={atanh} className="operator">
-            tanh<sup>-1</sup>
-          </button>
-          <button onClick={sign} className="operator">
-            sign
-          </button>
-          <button onClick={random} className="operator random">
-            random
-          </button>
-          <button onClick={expm1} className="operator exp">
-            exp(x)-1
-          </button>
-          <button onClick={log1p} className="operator log">
-            log(1+x)
-          </button>
+        <div className="display-result">
+          = {result} {/* DISPLAY RESULT STATE VARIABLE */}
         </div>
       </div>
-      <footer className="attribution">
-        &copy;
-        <a
-          meeky_berry
-          href="https://github.com/MeekyBerry"
-          target="_blank"
-          rel="noreferrer"
+      <div className="operators">
+        <button onClick={clear} className="operator clear">
+          AC
+        </button>
+        <button onClick={diameter} className="operator">
+          ⌀
+        </button>
+        <button onClick={() => bracket("(")} className="operator">
+          (
+        </button>
+        <button onClick={() => bracket(")")} className="operator">
+          )
+        </button>
+        <button onClick={square} className="operator">
+          x²
+        </button>
+        <button onClick={del} className="operator delete">
+          DEL
+        </button>
+        <button onClick={cube} className="operator cube">
+          x³
+        </button>
+        <button onClick={() => updateCalc("**")} className="operator">
+          ^
+        </button>
+        <button onClick={log} className="operator log">
+          log
+        </button>
+        <button onClick={log10} className="operator logTen">
+          log<sub>10</sub>
+        </button>
+        <button onClick={log2} className="operator">
+          log<sub>2</sub>
+        </button>
+        <button onClick={pow10} className="operator">
+          10<sup>x</sup>
+        </button>
+        <button onClick={sin} className="operator sin">
+          sin
+        </button>
+        <button onClick={cos} className="operator cos">
+          cos
+        </button>
+        <button onClick={tan} className="operator tan">
+          tan
+        </button>
+        <button onClick={factorial} className="operator factorial">
+          n!
+        </button>
+        <button onClick={round} className="operator">
+          round
+        </button>
+        <button onClick={exponential} className="operator">
+          Exp
+        </button>
+        <button onClick={floor} className="operator">
+          floor
+        </button>
+        <button onClick={e} className="operator exponent">
+          e
+        </button>
+        <button onClick={pi} className="operator pie">
+          π
+        </button>
+        <button onClick={squareRoot} className="operator sqrt">
+          √
+        </button>
+        {createDigits().map((digit) => (
+          <button
+            onClick={() => updateCalc(digit.toString())}
+            className="digit"
+            key={digit}
+          >
+            {digit}
+          </button> // CREATE DIGITS BUTTONS AND MAP THROUGH DIGITS ARRAY TO DISPLAY DIGITS 1-9 ON BUTTONS
+        ))}
+        <button onClick={posNeg} className="primary--operator">
+          +/-
+        </button>
+        <button onClick={() => updateCalc(".")} className="operator dot">
+          .
+        </button>
+        <button onClick={() => updateCalc("0")} className="zero digit">
+          0
+        </button>
+        <button onClick={percentage} className="primary--operator percentage">
+          %
+        </button>
+        <button
+          onClick={() => updateCalc("*")}
+          className="primary--operator multiply"
         >
-          meeky_berry/2022
-        </a>
-      </footer>
-    </div>
+          x
+        </button>
+        <button
+          onClick={() => updateCalc("/")}
+          className="primary--operator divide"
+        >
+          ÷
+        </button>
+        <button
+          onClick={() => updateCalc("-")}
+          className="primary--operator minus"
+        >
+          -
+        </button>
+        <button
+          onClick={() => updateCalc("+")}
+          className="primary--operator plus"
+        >
+          +
+        </button>
+        <button onClick={calculate} className="operator equalTo">
+          =
+        </button>
+        <button onClick={reciprocal} className="operator reciprocal">
+          1/x
+        </button>
+        <button onClick={cubeRoot} className="operator cubeRoot">
+          3√
+        </button>
+        <button onClick={() => updateCalc("==")} className="operator equal">
+          ==
+        </button>
+        <button onClick={() => updateCalc("<")} className="operator greater">
+          {"<"}
+        </button>
+        <button onClick={() => updateCalc(">")} className="operator less">
+          {">"}
+        </button>
+        <button onClick={() => updateCalc("<=")} className="operator greaterTo">
+          {"<="}
+        </button>
+        <button onClick={() => updateCalc(">=")} className="operator lessTo">
+          {">="}
+        </button>
+        <button onClick={() => updateCalc("!=")} className="operator notequal">
+          {"!="}
+        </button>
+        <button onClick={radian} className="operator radian">
+          rad
+        </button>
+        <button onClick={degree} className="operator degree">
+          deg
+        </button>
+        <button onClick={radius} className="operator radius">
+          R
+        </button>
+        <button onClick={asin} className="operator">
+          sin<sup>-1</sup>
+        </button>
+        <button onClick={acos} className="operator">
+          cos<sup>-1</sup>
+        </button>
+        <button onClick={atan} className="operator">
+          tan<sup>-1</sup>
+        </button>
+        <button onClick={hyp} className="operator hyp">
+          hyp
+        </button>
+        <button onClick={() => updateCalc("%")} className="operator modulo">
+          mod
+        </button>
+        <button onClick={sinh} className="operator sinH">
+          sinh
+        </button>
+        <button onClick={cosh} className="operator cosH">
+          cosh
+        </button>
+        <button onClick={tanh} className="operator tanH">
+          tanh
+        </button>
+        <button onClick={asinh} className="operator">
+          sinh<sup>-1</sup>
+        </button>
+        <button onClick={acosh} className="operator">
+          cosh<sup>-1</sup>
+        </button>
+        <button onClick={atanh} className="operator">
+          tanh<sup>-1</sup>
+        </button>
+        <button onClick={sign} className="operator">
+          sign
+        </button>
+        <button onClick={random} className="operator random">
+          random
+        </button>
+        <button onClick={expm1} className="operator exp">
+          exp(x)-1
+        </button>
+        <button onClick={log1p} className="operator log">
+          log(1+x)
+        </button>
+      </div>
+    </main>
   );
 }
 
